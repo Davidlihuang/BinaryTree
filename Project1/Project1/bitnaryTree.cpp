@@ -141,8 +141,8 @@ void PreorderLrchildTraverse(Bitree T)
 			p = s.top();
 			cout << p->data << " ";
 			s.pop();
-			if (p->lchild) s.push(p->rchild);
-			if (p->rchild) s.push(p->lchild);
+			if (p->rchild) s.push(p->rchild);
+			if (p->lchild) s.push(p->lchild);
 		}
 	}
 }
@@ -168,9 +168,6 @@ void TreeLeavesInOrder(Bitree T){
 }
 void TreeLeavesAftOrder(Bitree T) {
 	if (T) {
-		if (T->lchild == nullptr && T->rchild == nullptr) {
-			cout << T->data << " ";
-		}
 		TreeLeavesPreOrder(T->lchild);
 		TreeLeavesPreOrder(T->rchild);
 		if (T->lchild == nullptr && T->rchild == nullptr) {
