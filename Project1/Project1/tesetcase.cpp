@@ -23,5 +23,19 @@ int main()
 
 	cout << "\nLayerTraverseNoRecurse:";
 	LayerTraverseNoRecurse(Tree);
+
+	//左右孩子法实现先序遍历
+	cout << "\nPreorderLrchildTraverse:";
+	PreorderLrchildTraverse(Tree);
+
+	//叶子结点
+	cout << "\nget leaves:";
+	TreeLeavesPreOrder(Tree);
+	cout << "\nget leaves:";
+	TreeLeavesInOrder(Tree);
+	cout << "\nget leaves:" ;
+	TreeLeavesAftOrder(Tree);
+	cout << endl;
+	cout << "tree depth: "<<TreeDepth(Tree) << endl;
 	return 0;
 }

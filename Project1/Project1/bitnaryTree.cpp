@@ -115,3 +115,67 @@ void LayerTraverseNoRecurse(Bitree T)
 	}
 }
 
+//左右孩子法实现先序遍历
+void PreorderLrchildTraverse(Bitree T)
+{
+	if (T) {
+		stack<Bitree> s;
+		Bitree p = T;
+		s.push(p);
+		while (!s.empty())
+		{
+			p = s.top();
+			cout << p->data << " ";
+			s.pop();
+			if (p->lchild) s.push(p->rchild);
+			if (p->rchild) s.push(p->lchild);
+		}
+	}
+}
+
+//输出叶子结点
+void TreeLeavesPreOrder(Bitree T) {
+	if (T) {
+		if (T->lchild == nullptr && T->rchild == nullptr) {
+			cout << T->data << " ";
+		}
+		TreeLeavesPreOrder(T->lchild);
+		TreeLeavesPreOrder(T->rchild);
+	}
+}
+void TreeLeavesInOrder(Bitree T){
+	if (T) {
+		TreeLeavesPreOrder(T->lchild);
+		if (T->lchild == nullptr && T->rchild == nullptr) {
+			cout << T->data << " ";
+		}
+		TreeLeavesPreOrder(T->rchild);
+	}
+}
+void TreeLeavesAftOrder(Bitree T) {
+	if (T) {
+		if (T->lchild == nullptr && T->rchild == nullptr) {
+			cout << T->data << " ";
+		}
+		TreeLeavesPreOrder(T->lchild);
+		TreeLeavesPreOrder(T->rchild);
+		if (T->lchild == nullptr && T->rchild == nullptr) {
+			cout << T->data << " ";
+		}
+	}
+}
+
+//获取树的深度
+int TreeDepth(Bitree T) {
+
+	if (T) {
+		int hl, hr, maxh;
+		hl = TreeDepth(T->lchild);
+		hr = TreeDepth(T->rchild);
+		maxh = (hl > hr) ? hl : hr;
+		return (maxh + 1);
+	}
+	else {
+		return 0;
+	}
+}

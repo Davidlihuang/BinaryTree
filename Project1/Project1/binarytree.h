@@ -28,6 +28,13 @@ void PreOrederTraverseNoRecurse(Bitree T);
 void InOrderTraverseNoRecurse(Bitree T);
 void AftOrderTraverseNoRecurse(Bitree T);
 void LayerTraverseNoRecurse(Bitree T);
+void PreorderLrchildTraverse(Bitree T);
 
+//输出叶子结点
+void TreeLeavesPreOrder(Bitree T);
+void TreeLeavesInOrder(Bitree T);
+void TreeLeavesAftOrder(Bitree T);
 
+//树的深度
+int TreeDepth(Bitree T);
 #endif // !BITNARYTREE_H_
