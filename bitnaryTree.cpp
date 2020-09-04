@@ -1,7 +1,7 @@
 #include "binarytree.h"
 
 using namespace std;
-//´´½¨Ê÷
+//åˆ›å»ºæ ‘
 void CreateTree(Bitree& T)
 {
 	ElemType ch;
@@ -19,10 +19,10 @@ void CreateTree(Bitree& T)
 	}
 	//}
 }
-//Ïú»ÙÊ÷
+//é”€æ¯æ ‘
 void DestroyTree(Bitree& T);
 
-//µİ¹é±éÀúÊ÷
+//é€’å½’éå†æ ‘
 void PreOrderTraverse(Bitree T)
 {
 	if (T != nullptr) {
@@ -48,7 +48,7 @@ void AftOrderTraverse(Bitree T)
 	}
 	
 }
-//·Çµİ¹é±éÀúÊ÷
+//éé€’å½’éå†æ ‘
 void PreOrederTraverseNoRecurse(Bitree T)
 {
 	stack<TreeNode*> s;
@@ -111,10 +111,10 @@ void AftOrderTraverseNoRecurse(Bitree T)
 
 }
 
-//²ã±éÀúÊ÷
+//å±‚éå†æ ‘
 void LayerTraverseNoRecurse(Bitree T)
 {
-	//1¡¢¸ù½ÚµãÈë¶Ó 2¡¢¸ù½Úµã³ö¶Ó£¬²¢½«Æäº¢×Ó½áµãÈë¶Ó  3¡¢³ö¶Ó²¢½«¶ÓÊ×ÔªËØº¢×ÓÈë¶Ó
+	//1ã€æ ¹èŠ‚ç‚¹å…¥é˜Ÿ 2ã€æ ¹èŠ‚ç‚¹å‡ºé˜Ÿï¼Œå¹¶å°†å…¶å­©å­ç»“ç‚¹å…¥é˜Ÿ  3ã€å‡ºé˜Ÿå¹¶å°†é˜Ÿé¦–å…ƒç´ å­©å­å…¥é˜Ÿ
 	if (T) {
 		Bitree p = T;
 		queue<Bitree> Que;
@@ -129,7 +129,7 @@ void LayerTraverseNoRecurse(Bitree T)
 	}
 }
 
-//×óÓÒº¢×Ó·¨ÊµÏÖÏÈĞò±éÀú
+//å·¦å³å­©å­æ³•å®ç°å…ˆåºéå†
 void PreorderLrchildTraverse(Bitree T)
 {
 	if (T) {
@@ -141,13 +141,13 @@ void PreorderLrchildTraverse(Bitree T)
 			p = s.top();
 			cout << p->data << " ";
 			s.pop();
-			if (p->lchild) s.push(p->rchild);
-			if (p->rchild) s.push(p->lchild);
+			if (p->rchild) s.push(p->rchild);
+			if (p->lchild) s.push(p->lchild);
 		}
 	}
 }
 
-//Êä³öÒ¶×Ó½áµã
+//è¾“å‡ºå¶å­ç»“ç‚¹
 void TreeLeavesPreOrder(Bitree T) {
 	if (T) {
 		if (T->lchild == nullptr && T->rchild == nullptr) {
@@ -168,9 +168,6 @@ void TreeLeavesInOrder(Bitree T){
 }
 void TreeLeavesAftOrder(Bitree T) {
 	if (T) {
-		if (T->lchild == nullptr && T->rchild == nullptr) {
-			cout << T->data << " ";
-		}
 		TreeLeavesPreOrder(T->lchild);
 		TreeLeavesPreOrder(T->rchild);
 		if (T->lchild == nullptr && T->rchild == nullptr) {
@@ -179,7 +176,7 @@ void TreeLeavesAftOrder(Bitree T) {
 	}
 }
 
-//»ñÈ¡Ê÷µÄÉî¶È
+//è·å–æ ‘çš„æ·±åº¦
 int TreeDepth(Bitree T) {
 
 	if (T) {
