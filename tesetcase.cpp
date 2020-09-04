@@ -46,5 +46,9 @@ int main()
 
 	//获取树的深度
 	cout << "tree depth: "<<TreeDepth(Tree) << endl;
+
+	//销毁树
+	DestroyTree(Tree);
+
 	return 0;
 }

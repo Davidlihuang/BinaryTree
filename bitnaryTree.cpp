@@ -1,7 +1,7 @@
 #include "binarytree.h"
 
 using namespace std;
-//åˆ›å»ºæ ‘
+//´´½¨Ê÷
 void CreateTree(Bitree& T)
 {
 	ElemType ch;
@@ -19,10 +19,19 @@ void CreateTree(Bitree& T)
 	}
 	//}
 }
-//é”€æ¯æ ‘
-void DestroyTree(Bitree& T);
+//Ïú»ÙÊ÷
+void DestroyTree(Bitree& T) {
+	if (T != nullptr) {
+		DestroyTree(T->lchild);
+		DestroyTree(T->rchild);
+		cout <<"Delete: "<< T->data << endl;
+		delete T;
+		T = nullptr;
 
-//é€’å½’éå†æ ‘
+	}
+}
+
+//µİ¹é±éÀúÊ÷
 void PreOrderTraverse(Bitree T)
 {
 	if (T != nullptr) {
@@ -48,7 +57,7 @@ void AftOrderTraverse(Bitree T)
 	}
 	
 }
-//éé€’å½’éå†æ ‘
+//·Çµİ¹é±éÀúÊ÷
 void PreOrederTraverseNoRecurse(Bitree T)
 {
 	stack<TreeNode*> s;
@@ -111,10 +120,10 @@ void AftOrderTraverseNoRecurse(Bitree T)
 
 }
 
-//å±‚éå†æ ‘
+//²ã±éÀúÊ÷
 void LayerTraverseNoRecurse(Bitree T)
 {
-	//1ã€æ ¹èŠ‚ç‚¹å…¥é˜Ÿ 2ã€æ ¹èŠ‚ç‚¹å‡ºé˜Ÿï¼Œå¹¶å°†å…¶å­©å­ç»“ç‚¹å…¥é˜Ÿ  3ã€å‡ºé˜Ÿå¹¶å°†é˜Ÿé¦–å…ƒç´ å­©å­å…¥é˜Ÿ
+	//1¡¢¸ù½ÚµãÈë¶Ó 2¡¢¸ù½Úµã³ö¶Ó£¬²¢½«Æäº¢×Ó½áµãÈë¶Ó  3¡¢³ö¶Ó²¢½«¶ÓÊ×ÔªËØº¢×ÓÈë¶Ó
 	if (T) {
 		Bitree p = T;
 		queue<Bitree> Que;
@@ -129,7 +138,7 @@ void LayerTraverseNoRecurse(Bitree T)
 	}
 }
 
-//å·¦å³å­©å­æ³•å®ç°å…ˆåºéå†
+//×óÓÒº¢×Ó·¨ÊµÏÖÏÈĞò±éÀú
 void PreorderLrchildTraverse(Bitree T)
 {
 	if (T) {
@@ -147,7 +156,7 @@ void PreorderLrchildTraverse(Bitree T)
 	}
 }
 
-//è¾“å‡ºå¶å­ç»“ç‚¹
+//Êä³öÒ¶×Ó½áµã
 void TreeLeavesPreOrder(Bitree T) {
 	if (T) {
 		if (T->lchild == nullptr && T->rchild == nullptr) {
@@ -176,7 +185,7 @@ void TreeLeavesAftOrder(Bitree T) {
 	}
 }
 
-//è·å–æ ‘çš„æ·±åº¦
+//»ñÈ¡Ê÷µÄÉî¶È
 int TreeDepth(Bitree T) {
 
 	if (T) {
