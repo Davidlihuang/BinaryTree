@@ -20,7 +20,16 @@ void CreateTree(Bitree& T)
 	//}
 }
 //Ïú»ÙÊ÷
-void DestroyTree(Bitree& T);
+void DestroyTree(Bitree& T) {
+	if (T != nullptr) {
+		DestroyTree(T->lchild);
+		DestroyTree(T->rchild);
+		cout <<"Delete: "<< T->data << endl;
+		delete T;
+		T = nullptr;
+
+	}
+}
 
 //µÝ¹é±éÀúÊ÷
 void PreOrderTraverse(Bitree T)
