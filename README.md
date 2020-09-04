@@ -1,2 +1,6 @@
-# CreateTree
-1、数据结构中树的创建以及遍历
+Bitnary tree:
+    1. create
+    2. destory
+    3. traverse
+    4. index
+
