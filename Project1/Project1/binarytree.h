@@ -2,8 +2,9 @@
 #ifndef BITNARYTREE_H_
 #define BITNARYTREE_H_
 #include <iostream>
+#include <stack>
+#include <queue>
 
-using namespace std;
 typedef struct TreeNode* Bitree;
 typedef char ElemType;
 struct TreeNode
@@ -13,48 +14,20 @@ struct TreeNode
 	TreeNode* rchild;
 };
 //创建树
-void CreateTree(Bitree& T)
-{
-	ElemType ch;
-	cin >> ch;
-	//if (ch != '\n') {
-		if (ch == '#') {
-			T = nullptr;
-		}
-		else {
-			T = new TreeNode;
-			if (T == nullptr) exit(OVERFLOW);
-			T->data = ch;
-			CreateTree(T->lchild);
-			CreateTree(T->rchild);
-		}
-	//}
-}
+void CreateTree(Bitree& T);
 //销毁树
 void DestroyTree(Bitree& T);
 
-//遍历树
-void PreOrderTraverse(Bitree T)
-{
-	if (T != nullptr) {
-		cout << T->data << " ";
-		PreOrderTraverse(T->lchild);
-		PreOrderTraverse(T->rchild);
-	}
-}
-void InOrderTraverse(Bitree T)
-{
-	if (T != nullptr) {
-		PreOrderTraverse(T->lchild);
-		cout << T->data << " ";
-		PreOrderTraverse(T->rchild);
-	}
-}
-void AftOrderTraverse(Bitree T)
-{
-	PreOrderTraverse(T->lchild);
-	PreOrderTraverse(T->rchild);
-	cout << T->data << " ";
-}
+//递归遍历树
+void PreOrderTraverse(Bitree T);
+void InOrderTraverse(Bitree T);
+void AftOrderTraverse(Bitree T);
+
+//非递归遍历树
+void PreOrederTraverseNoRecurse(Bitree T);
+void InOrderTraverseNoRecurse(Bitree T);
+void AftOrderTraverseNoRecurse(Bitree T);
+void LayerTraverseNoRecurse(Bitree T);
+
 
 #endif // !BITNARYTREE_H_

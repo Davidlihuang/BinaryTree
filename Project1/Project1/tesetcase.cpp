@@ -16,5 +16,12 @@ int main()
 	InOrderTraverse(Tree);
 	cout << "\nAter order traverse: ";
 	AftOrderTraverse(Tree);
+	cout << "\nPreOrederTraverseNoRecurse:";
+	PreOrederTraverseNoRecurse(Tree);
+	cout << "\nInOrederTraverseNoRecurse:";
+	InOrderTraverseNoRecurse(Tree);
+
+	cout << "\nLayerTraverseNoRecurse:";
+	LayerTraverseNoRecurse(Tree);
 	return 0;
 }
