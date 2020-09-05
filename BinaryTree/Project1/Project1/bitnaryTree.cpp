@@ -6,7 +6,6 @@ void CreateTree(Bitree& T)
 {
 	ElemType ch;
 	cin >> ch;
-	//if (ch != '\n') {
 	if (ch == '#') {
 		T = nullptr;
 	}
@@ -17,7 +16,20 @@ void CreateTree(Bitree& T)
 		CreateTree(T->lchild);
 		CreateTree(T->rchild);
 	}
-	//}
+}
+//复制树
+void CopyTree(Bitree& NewT, Bitree& T)
+{
+	if (T != nullptr) {
+		NewT = new TreeNode;
+		NewT->data = T->data;
+		CopyTree(NewT->lchild, T->lchild);
+		CopyTree(NewT->rchild, T->rchild);
+	}
+	else {
+		NewT = nullptr;
+		return;
+	}
 }
 //销毁树
 void DestroyTree(Bitree& T) {
@@ -184,7 +196,6 @@ void TreeLeavesAftOrder(Bitree T) {
 		}
 	}
 }
-
 //获取树的深度
 int TreeDepth(Bitree T) {
 
@@ -199,3 +210,52 @@ int TreeDepth(Bitree T) {
 		return 0;
 	}
 }
+
+//获取总结点数
+int NodesOfTree(Bitree T)
+{
+	
+	if (T != nullptr) {
+		int numL = 0,numR=0;
+		numL = NodesOfTree(T->lchild);
+		numR = NodesOfTree(T->rchild);
+		return (numL + numR + 1);
+	}
+	else {
+		return 0;
+	}
+}
+//求度
+void NodesNumOfZeroDegree(Bitree T, int& d)
+{
+	if (T != nullptr) {
+		if ((T->lchild == nullptr) && (T->rchild == nullptr)) {
+			d++;
+		}
+		NodesNumOfZeroDegree(T->lchild, d);
+		NodesNumOfZeroDegree(T->rchild, d);
+	}
+	else {
+		return;
+	}
+}
+void NodesNumOfTwoDegree(Bitree T, int& d) {
+	int zero = 0;
+	NodesNumOfZeroDegree(T, zero);
+	d = zero - 1;
+}
+
+void NodesNumOfOneDegree(Bitree T, int& d){
+	int nums = 0, twoDegree = 0, zeroDegree =0;
+	nums = NodesOfTree(T);
+	NodesNumOfTwoDegree(T,twoDegree);
+	NodesNumOfZeroDegree(T,zeroDegree);
+	d = nums - twoDegree - zeroDegree;
+}
+
+void GetDegree(Bitree T, int& zero, int& one, int& two) {
+	NodesNumOfZeroDegree(T, zero);
+	NodesNumOfOneDegree(T, one);
+	NodesNumOfTwoDegree(T, two);
+}
+
