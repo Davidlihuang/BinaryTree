@@ -1,7 +1,7 @@
 #include "binarytree.h"
 
 using namespace std;
-//´´½¨Ê÷
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void CreateTree(Bitree& T)
 {
 	ElemType ch;
@@ -17,7 +17,7 @@ void CreateTree(Bitree& T)
 		CreateTree(T->rchild);
 	}
 }
-//¸´ÖÆÊ÷
+//å¤åˆ¶æ ‘
 void CopyTree(Bitree& NewT, Bitree& T)
 {
 	if (T != nullptr) {
@@ -31,7 +31,7 @@ void CopyTree(Bitree& NewT, Bitree& T)
 		return;
 	}
 }
-//Ïú»ÙÊ÷
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void DestroyTree(Bitree& T) {
 	if (T != nullptr) {
 		DestroyTree(T->lchild);
@@ -43,7 +43,7 @@ void DestroyTree(Bitree& T) {
 	}
 }
 
-//µÝ¹é±éÀúÊ÷
+//ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void PreOrderTraverse(Bitree T)
 {
 	if (T != nullptr) {
@@ -69,7 +69,7 @@ void AftOrderTraverse(Bitree T)
 	}
 	
 }
-//·ÇµÝ¹é±éÀúÊ÷
+//ï¿½ÇµÝ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void PreOrederTraverseNoRecurse(Bitree T)
 {
 	stack<TreeNode*> s;
@@ -132,10 +132,10 @@ void AftOrderTraverseNoRecurse(Bitree T)
 
 }
 
-//²ã±éÀúÊ÷
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void LayerTraverseNoRecurse(Bitree T)
 {
-	//1¡¢¸ù½ÚµãÈë¶Ó 2¡¢¸ù½Úµã³ö¶Ó£¬²¢½«Æäº¢×Ó½áµãÈë¶Ó  3¡¢³ö¶Ó²¢½«¶ÓÊ×ÔªËØº¢×ÓÈë¶Ó
+	//1ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½äº¢ï¿½Ó½ï¿½ï¿½ï¿½ï¿½ï¿½  3ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½Øºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (T) {
 		Bitree p = T;
 		queue<Bitree> Que;
@@ -150,7 +150,7 @@ void LayerTraverseNoRecurse(Bitree T)
 	}
 }
 
-//×óÓÒº¢×Ó·¨ÊµÏÖÏÈÐò±éÀú
+//ï¿½ï¿½ï¿½Òºï¿½ï¿½Ó·ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void PreorderLrchildTraverse(Bitree T)
 {
 	if (T) {
@@ -168,7 +168,7 @@ void PreorderLrchildTraverse(Bitree T)
 	}
 }
 
-//Êä³öÒ¶×Ó½áµã
+//ï¿½ï¿½ï¿½Ò¶ï¿½Ó½ï¿½ï¿½
 void TreeLeavesPreOrder(Bitree T) {
 	if (T) {
 		if (T->lchild == nullptr && T->rchild == nullptr) {
@@ -196,7 +196,7 @@ void TreeLeavesAftOrder(Bitree T) {
 		}
 	}
 }
-//»ñÈ¡Ê÷µÄÉî¶È
+//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 int TreeDepth(Bitree T) {
 
 	if (T) {
@@ -211,7 +211,7 @@ int TreeDepth(Bitree T) {
 	}
 }
 
-//»ñÈ¡×Ü½áµãÊý
+//ï¿½ï¿½È¡ï¿½Ü½ï¿½ï¿½ï¿½ï¿½
 int NodesOfTree(Bitree T)
 {
 	
@@ -225,7 +225,7 @@ int NodesOfTree(Bitree T)
 		return 0;
 	}
 }
-//Çó¶È
+//ï¿½ï¿½ï¿½
 void NodesNumOfZeroDegree(Bitree T, int& d)
 {
 	if (T != nullptr) {
