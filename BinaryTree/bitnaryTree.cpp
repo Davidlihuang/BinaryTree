@@ -1,7 +1,7 @@
 #include "binarytree.h"
 
 using namespace std;
-//������
+//创建树
 void CreateTree(Bitree& T)
 {
 	ElemType ch;
@@ -31,7 +31,7 @@ void CopyTree(Bitree& NewT, Bitree& T)
 		return;
 	}
 }
-//������
+//销毁树
 void DestroyTree(Bitree& T) {
 	if (T != nullptr) {
 		DestroyTree(T->lchild);
@@ -43,7 +43,7 @@ void DestroyTree(Bitree& T) {
 	}
 }
 
-//�ݹ������
+//前序遍历树
 void PreOrderTraverse(Bitree T)
 {
 	if (T != nullptr) {
@@ -69,7 +69,7 @@ void AftOrderTraverse(Bitree T)
 	}
 	
 }
-//�ǵݹ������
+//前序非递归遍历树
 void PreOrederTraverseNoRecurse(Bitree T)
 {
 	stack<TreeNode*> s;
