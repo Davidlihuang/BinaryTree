@@ -85,15 +85,13 @@ void SkipList::insert(ElementType val) {
     
       
 }
-void SkipList::remove(ElementType val) {
-    
-}
-Node* SkipList::search(ElementType val) {
+
+bool SkipList::search(ElementType val) {
     
     //遍历到L1层，如果结点不存在cursor->right和cursor->down
     Node* cursor  = nullptr;
     if (head == nullptr) {
-        return nullptr;
+        return false;
     } else {
         cursor = head;
         while (cursor->down != nullptr) {
@@ -112,12 +110,46 @@ Node* SkipList::search(ElementType val) {
                 cursor = cursor->next;
             } else if (val == cursor->next->data) {
                 cursor = cursor->next;
-                break;
+                return true;
             } else {
-                cursor = nullptr;
-                break;
+                return false;
             }
         }
     }
-    return cursor;
+}
+
+void SkipList::remove(ElementType val) {
+    Node* cursor = head;
+    Node* preHead = nullptr;
+    while (true)
+    {
+        Node* curHead = cursor;
+        if (preHead != nullptr) {
+            curHead->up = nullptr;
+            preHead->down = nullptr;
+            delete preHead;
+            preHead = nullptr;
+            LevelNum--;
+            head = curHead;
+        }
+        while (cursor != nullptr && cursor->next != nullptr)
+        {
+            if(val == cursor->next->data) {
+                Node* deltePtr = cursor->next;
+                cursor->next = cursor->next->next;
+                delete deltePtr;
+            }
+            cursor = cursor->next;
+        }
+        if(curHead->next == nullptr) {
+            preHead = curHead;
+        }
+        if(curHead->down == nullptr) {
+            break;
+        } else {
+            cursor = curHead->down;
+        }
+        
+    }
+    
 }

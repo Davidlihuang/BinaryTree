@@ -23,7 +23,7 @@ public:
     }
     void insert(ElementType val);
     void remove(ElementType val);
-    Node* search(ElementType val);
+    bool search(ElementType val);
 
 private:
     Node* head;
