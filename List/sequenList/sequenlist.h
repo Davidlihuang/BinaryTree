@@ -2,18 +2,15 @@
 #define SEQUENLIST_H_
 #include <iostream>
 typedef int ElemenType;
-const int MAXSIZE = 1000;
+const int MAXSIZE = 20;
 class SequenList {
 private:
     ElemenType* data;
     int length;
 public:
-    SequenList(int len) {
-        if (len <= MAXSIZE) {
-
+    SequenList() {
             data = new ElemenType[MAXSIZE];    
-            length = len;
-        } 
+            length = 0;
     }
 
     void addfirst(const ElemenType val);
@@ -29,6 +26,8 @@ public:
     int listLength() const { return length; }
     ElemenType& operator[](int i);
     ElemenType operator[](int i) const;
+
+    friend std::ostream& operator<<(std::ostream& os, SequenList &sqlist);
 
 };
 #endif

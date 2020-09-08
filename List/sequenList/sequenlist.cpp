@@ -60,3 +60,10 @@ ElemenType& SequenList::operator[](int i) {
 ElemenType SequenList::operator[](int i) const {
     return data[i];
 }
+
+std::ostream& operator<<(std::ostream& os, SequenList &sqlist) {
+    for (int i=0; i<sqlist.length; i++) {
+        os << sqlist[i] <<" ";
+    }
+    return os;
+}
