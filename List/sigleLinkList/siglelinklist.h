@@ -25,8 +25,8 @@ public:
     int locateElemt(Elementype val);
     Status getElemt(int i, Elementype& val);
     int listLength() const {return length;}
-    ListNode& operator[](int i);
-    const ListNode& operator[](int i) const;
+    Elementype& operator[](int i);
+    const Elementype& operator[](int i) const;
     SingleList& operator=(const SingleList& list);
     friend std::ostream& operator<<(std::ostream& os, SingleList& List);
 };

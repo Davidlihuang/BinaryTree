@@ -103,7 +103,7 @@ SingleList::Status SingleList::getElemt(int i, Elementype& val) {
     val = p->data;
     return OK;
 }
-ListNode& SingleList::operator[](int i) {
+Elementype& SingleList::operator[](int i) {
     ListNode* p  = head->next;
     i = i + 1;
     int j = 1;
@@ -112,10 +112,10 @@ ListNode& SingleList::operator[](int i) {
         p = p->next;
         j++;
     }
-    if( !p || j > i) return *p;
-    return *p;
+    if( !p || j > i) return head->data;
+    return p->data;
 }
-const ListNode& SingleList::operator[](int i) const {
+const Elementype& SingleList::operator[](int i) const {
     ListNode* p  = head->next;
     i = i + 1;
     int j = 1;
@@ -124,8 +124,8 @@ const ListNode& SingleList::operator[](int i) const {
         p = p->next;
         j++;
     }
-    if( !p || j > i) return *p;
-    return *p;
+    if( !p || j > i) return head->data;
+    return p->data;
 }
 
 SingleList& SingleList::operator=(const SingleList& List) {
