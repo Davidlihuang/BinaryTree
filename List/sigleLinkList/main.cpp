@@ -4,6 +4,7 @@
 int main() {
     using namespace std;
 {
+    /*
     SingleList list;
     for(int i =0 ; i < 20; i++) {
         if( i < 10) {
@@ -34,7 +35,7 @@ int main() {
     SingleList list2 = list; 
     cout << "origin List: "<< list << endl;
     cout << "new List: " << list2 << endl;
-
+*/
     //重新初始化list
     SingleList newlist;
     for(int i =0 ; i < 20; i++) {
@@ -45,7 +46,7 @@ int main() {
         }  
     }
     cout <<"newlist: " <<newlist <<"\nList length: "<<newlist.listLength()<< endl;
-
+    
     // 复制运算符test
     SingleList list3;
     list3 = newlist;

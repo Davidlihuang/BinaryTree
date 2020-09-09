@@ -105,10 +105,13 @@ SingleList::Status SingleList::getElemt(int i, Elementype& val) {
 }
 SingleList::Status SingleList::clearList() {
     int val;
+    std::cout << " length: "<<length << std::endl;
     for (int i = 0; i < length; i++)
     {
         removeFirst(val);
+        std::cout << "delte-"<<i<<" "<<std::endl;
     }
+    std::cout <<"this list: "<<*this <<" length: "<< length << std::endl;
     if (length == 0) {
         head->next = nullptr;
         return OK;
@@ -175,6 +178,6 @@ SingleList::~SingleList() {
     if(head->next == nullptr) {
         delete head;
         head = nullptr;
-        std::cout << "release list"<< std::endl;
+        //std::cout << "release list"<< std::endl;
     }
 }
