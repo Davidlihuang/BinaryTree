@@ -3,13 +3,16 @@
 #include <iostream>
 #include <climits>
 typedef int Elementype ;
-struct ListNode {
-    Elementype data;
-    ListNode* next;
-    ListNode(Elementype val = INT_MIN): data(val), next(nullptr){}
-};
+
+
 class SingleList{
 private:
+    struct ListNode;
+    struct ListNode {
+        Elementype data;
+        ListNode* next;
+        ListNode(Elementype val = INT_MIN): data(val), next(nullptr){}
+    };
     ListNode* head;
     int length;
 public:

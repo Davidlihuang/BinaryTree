@@ -1,7 +1,7 @@
 #include "siglelinklist.h"
 
 
-SingleList::SingleList() {
+SingleList::SingleList(){
     head = new ListNode;
     length = 0;
 }
@@ -159,7 +159,7 @@ SingleList& SingleList::operator=(const SingleList& List) {
 }
 
 std::ostream& operator<<(std::ostream& os, SingleList& list) {
-    ListNode* p = list.head;
+    SingleList::ListNode* p = list.head;
     while(p->next) {
         p = p->next;
         os << p->data << " ";
@@ -173,6 +173,6 @@ SingleList::~SingleList() {
     if(head->next == nullptr) {
         delete head;
         head = nullptr;
-        std::cout << "release list"<< std::endl;
+        //std::cout << "release list"<< std::endl;
     }
 }
