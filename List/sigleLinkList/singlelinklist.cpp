@@ -105,13 +105,10 @@ SingleList::Status SingleList::getElemt(int i, Elementype& val) {
 }
 SingleList::Status SingleList::clearList() {
     int val;
-    std::cout << " length: "<<length << std::endl;
-    for (int i = 0; i < length; i++)
+    while ( length != 0)
     {
         removeFirst(val);
-        std::cout << "delte-"<<i<<" "<<std::endl;
     }
-    std::cout <<"this list: "<<*this <<" length: "<< length << std::endl;
     if (length == 0) {
         head->next = nullptr;
         return OK;
@@ -156,7 +153,6 @@ SingleList& SingleList::operator=(const SingleList& List) {
         r->next = newNode;
         r = newNode;
        
-        //insertPost(p->data);
         p = p->next;       
     }
     return *this;
@@ -174,10 +170,9 @@ std::ostream& operator<<(std::ostream& os, SingleList& list) {
 SingleList::~SingleList() {
     int val;
     clearList();
-     std::cout << "release"<< std::endl;
     if(head->next == nullptr) {
         delete head;
         head = nullptr;
-        //std::cout << "release list"<< std::endl;
+        std::cout << "release list"<< std::endl;
     }
 }
