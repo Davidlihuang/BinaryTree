@@ -6,19 +6,77 @@ SingleList::SingleList() {
     length = 0;
 }
 SingleList::SingleList(const SingleList &List) {
-   
+   head = new ListNode;
+   ListNode* r = head;
+   ListNode* p = List.head->next;
+   ListNode* newNode = nullptr;
+   length = List.length;
+   while (p)
+   {
+       
+       newNode = new ListNode(p->data);
+       newNode->next = r->next;
+       r->next = newNode;
+       r = newNode;
+       
+       //insertPost(p->data);
+       p = p->next;       
+   }
 }
-SingleList::Status inserBefor(Elementype val) {
 
-}
-SingleList::Status SingleList::inserPost(Elementype val) {
-
-}
 SingleList::Status SingleList::insert(int i, Elementype val)  {
-
+    ListNode* p = head;
+    int j =0 ;
+    while (p && j < i-1) {
+        p = p->next;
+        j++;
+    }
+    if (!p || j > i-1) return Error;
+    ListNode* newNode = new ListNode(val);
+    newNode->next = p->next;
+    p->next = newNode;
+    length++;
+    return OK;
 }
 SingleList::Status SingleList::remove(int i, Elementype &val) {
-
+    if(head != nullptr) {
+        ListNode* p = head;
+        ListNode* q = nullptr;
+        int j =0;
+        while (p->next && j < i-1)
+        {
+            p = p->next;
+            j++;
+        }
+        if(!p->next || j > i-1) return Error;
+        q = p->next;
+        p->next = q->next;
+        val = q->data;
+        delete q;
+        length--;
+        return OK;
+    }
+    return Error;
+}
+SingleList::Status SingleList::insertBefore(Elementype val) {
+    Status st = OK;
+    st = insert(1,val);
+    return st;
+}
+SingleList::Status SingleList::insertPost(Elementype val) {
+    Status st = OK;
+    st = insert(length+1,val);
+    return st;
+}
+SingleList::Status SingleList::removeFirst(Elementype &val) {
+    Status st = OK;
+    st = remove(1,val);
+    return st;
+}
+SingleList::Status SingleList::removePost(Elementype &val) {
+    Status st = OK;
+    st = remove(length, val);
+    return st;
 }
 int SingleList::locateElemt(Elementype val) {
     ListNode* p = head->next;
@@ -45,8 +103,51 @@ SingleList::Status SingleList::getElemt(int i, Elementype& val) {
     val = p->data;
     return OK;
 }
+ListNode& SingleList::operator[](int i) {
+    ListNode* p  = head->next;
+    i = i + 1;
+    int j = 1;
+    while (p && j < i)
+    {
+        p = p->next;
+        j++;
+    }
+    if( !p || j > i) return *p;
+    return *p;
+}
+const ListNode& SingleList::operator[](int i) const {
+    ListNode* p  = head->next;
+    i = i + 1;
+    int j = 1;
+    while (p && j < i)
+    {
+        p = p->next;
+        j++;
+    }
+    if( !p || j > i) return *p;
+    return *p;
+}
+
+SingleList& SingleList::operator=(const SingleList& List) {
+    ListNode* r = head;
+    ListNode* p = List.head->next;
+    ListNode* newNode = nullptr;
+    length = List.length;
+    while (p)
+    {   
+        newNode = new ListNode(p->data);
+        newNode->next = r->next;
+        r->next = newNode;
+        r = newNode;
+       
+        //insertPost(p->data);
+        p = p->next;       
+    }
+    return *this;
+}
+
 std::ostream& operator<<(std::ostream& os, SingleList& list) {
-    SingleList::ListNode* p = list.head;
+    ListNode* p = list.head;
     while(p->next) {
         p = p->next;
         os << p->data << " ";
