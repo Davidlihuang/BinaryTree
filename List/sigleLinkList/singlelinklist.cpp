@@ -103,6 +103,19 @@ SingleList::Status SingleList::getElemt(int i, Elementype& val) {
     val = p->data;
     return OK;
 }
+SingleList::Status SingleList::clearList() {
+    int val;
+    for (int i = 0; i < length; i++)
+    {
+        removeFirst(val);
+    }
+    if (length == 0) {
+        head->next = nullptr;
+        return OK;
+    } else {
+        return Error;
+    }
+}
 Elementype& SingleList::operator[](int i) {
     ListNode* p  = head->next;
     i = i + 1;
@@ -153,4 +166,15 @@ std::ostream& operator<<(std::ostream& os, SingleList& list) {
         os << p->data << " ";
     }
     return os;
+}
+
+SingleList::~SingleList() {
+    int val;
+    clearList();
+     std::cout << "release"<< std::endl;
+    if(head->next == nullptr) {
+        delete head;
+        head = nullptr;
+        std::cout << "release list"<< std::endl;
+    }
 }

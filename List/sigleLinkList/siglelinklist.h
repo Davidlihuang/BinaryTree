@@ -6,7 +6,7 @@ typedef int Elementype ;
 struct ListNode {
     Elementype data;
     ListNode* next;
-    ListNode(Elementype val = INT_MIN):data(val), next(nullptr){}
+    ListNode(Elementype val = INT_MIN): data(val), next(nullptr){}
 };
 class SingleList{
 private:
@@ -16,6 +16,7 @@ public:
     enum Status{Error = 0, OK = 1, Warning = 2, OverLength = 3};  
     SingleList();
     SingleList(const SingleList &List);
+    ~SingleList();
     Status insert(int i, Elementype val);  
     Status remove(int i, Elementype &val);
     Status insertBefore(Elementype val);
@@ -28,6 +29,7 @@ public:
     Elementype& operator[](int i);
     const Elementype& operator[](int i) const;
     SingleList& operator=(const SingleList& list);
+    Status clearList();
     friend std::ostream& operator<<(std::ostream& os, SingleList& List);
 };
 

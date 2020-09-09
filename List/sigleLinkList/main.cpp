@@ -3,6 +3,7 @@
 
 int main() {
     using namespace std;
+{
     SingleList list;
     for(int i =0 ; i < 20; i++) {
         if( i < 10) {
@@ -57,5 +58,7 @@ int main() {
     list3[0] = 400;
     cout<< list3 << endl;
     cout<<"test ended"<<endl;
+}
+
     return 0;
 }
