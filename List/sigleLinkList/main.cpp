@@ -1,11 +1,13 @@
 #include <iostream>
+#include <string>
 #include "siglelinklist.h"
+
 
 int main() {
     using namespace std;
 {
     
-    SingleList list;
+    SingleList<int> list;
     for(int i =0 ; i < 20; i++) {
         if( i < 10) {
             list.insertPost(i*i);
@@ -14,7 +16,7 @@ int main() {
         }  
     }
     cout <<"list: " <<list <<"\nList length: "<<list.listLength()<< endl;
-    
+
     // 插入删除test   
     cout << "插入删除test" << endl;
     int val;
@@ -33,13 +35,13 @@ int main() {
     
     //调用复制构造函数test；
     cout << "调用复制构造函数test；" << endl;
-    SingleList list2 = list; 
+    SingleList<int> list2 = list; 
     cout << "origin List: "<< list << endl;
     cout << "new List: " << list2 << endl;
    
     //重新初始化list
     cout << "重新初始化list" << endl;
-    SingleList newlist;
+    SingleList<int> newlist;
     for(int i =0 ; i < 20; i++) {
         if( i < 10) {
             newlist.insertPost(i*i);
@@ -51,7 +53,7 @@ int main() {
     
     // 复制运算符test
     cout << "复制运算符test" <<endl;
-    SingleList list3;
+    SingleList<int> list3;
     list3 = newlist;
     cout <<"list3: " <<list3 <<"\nList length: "<<list3.listLength()<< endl;
     
@@ -62,6 +64,16 @@ int main() {
     }
     list3[0] = 400;
     cout<< list3 << endl;
+
+    //string
+    SingleList<string> strList;
+    for(int i = 0; i < 20; i++) {
+        strList.insertPost("Love");
+    }
+    
+    cout <<"strng list: " << strList <<"\nList length: "<< strList.listLength()<< endl;
+    strList.clearList();
+    cout <<"strng list: " << strList <<"\nList length: "<< strList.listLength()<< endl;
     cout<<"test ended"<<endl;
     
 }

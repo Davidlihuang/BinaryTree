@@ -1,11 +1,13 @@
 #include "siglelinklist.h"
 
-
-SingleList::SingleList(){
+/*
+template<class T>
+SingleList<T>::SingleList(){
     head = new ListNode;
     length = 0;
 }
-SingleList::SingleList(const SingleList &List) {
+template<class T>
+SingleList<T>::SingleList(const SingleList<T> &List) {
    head = new ListNode;
    ListNode* r = head;
    ListNode* p = List.head->next;
@@ -23,8 +25,8 @@ SingleList::SingleList(const SingleList &List) {
        p = p->next;       
    }
 }
-
-SingleList::Status SingleList::insert(int i, Elementype val)  {
+template<class T>
+typename SingleList<T>::Status SingleList<T>::insert(int i, T val)  {
     ListNode* p = head;
     int j =0 ;
     while (p && j < i-1) {
@@ -38,7 +40,8 @@ SingleList::Status SingleList::insert(int i, Elementype val)  {
     length++;
     return OK;
 }
-SingleList::Status SingleList::remove(int i, Elementype &val) {
+template<class T>
+typename SingleList<T>::Status SingleList<T>::remove(int i, T &val) {
     if(head != nullptr) {
         ListNode* p = head;
         ListNode* q = nullptr;
@@ -58,27 +61,32 @@ SingleList::Status SingleList::remove(int i, Elementype &val) {
     }
     return Error;
 }
-SingleList::Status SingleList::insertBefore(Elementype val) {
+template<class T>
+typename SingleList<T>::Status SingleList<T>::insertBefore(T val) {
     Status st = OK;
     st = insert(1,val);
     return st;
 }
-SingleList::Status SingleList::insertPost(Elementype val) {
+template<class T>
+typename SingleList<T>::Status SingleList<T>::insertPost(T val) {
     Status st = OK;
     st = insert(length+1,val);
     return st;
 }
-SingleList::Status SingleList::removeFirst(Elementype &val) {
+template<class T>
+typename SingleList<T>::Status SingleList<T>::removeFirst(T &val) {
     Status st = OK;
     st = remove(1,val);
     return st;
 }
-SingleList::Status SingleList::removePost(Elementype &val) {
+template<class T>
+typename SingleList<T>::Status SingleList<T>::removePost(T &val) {
     Status st = OK;
     st = remove(length, val);
     return st;
 }
-int SingleList::locateElemt(Elementype val) {
+template<class T>
+int SingleList<T>::locateElemt(T val) {
     ListNode* p = head->next;
     int j = 1;
     while (p) {
@@ -90,7 +98,9 @@ int SingleList::locateElemt(Elementype val) {
     }
     return -1;
 }
-SingleList::Status SingleList::getElemt(int i, Elementype& val) {
+
+template<class T>
+typename SingleList<T>::Status SingleList<T>::getElemt(int i, T& val) {
     ListNode* p  = head->next;
     int j = 1;
     if (i > length) return Error;
@@ -103,7 +113,9 @@ SingleList::Status SingleList::getElemt(int i, Elementype& val) {
     val = p->data;
     return OK;
 }
-SingleList::Status SingleList::clearList() {
+
+template<class T>
+typename SingleList<T>::Status SingleList<T>::clearList() {
     int val;
     while ( length != 0)
     {
@@ -116,19 +128,9 @@ SingleList::Status SingleList::clearList() {
         return Error;
     }
 }
-Elementype& SingleList::operator[](int i) {
-    ListNode* p  = head->next;
-    i = i + 1;
-    int j = 1;
-    while (p && j < i)
-    {
-        p = p->next;
-        j++;
-    }
-    if( !p || j > i) return head->data;
-    return p->data;
-}
-const Elementype& SingleList::operator[](int i) const {
+
+template<class T>
+T& SingleList<T>::operator[](int i) {
     ListNode* p  = head->next;
     i = i + 1;
     int j = 1;
@@ -141,7 +143,22 @@ const Elementype& SingleList::operator[](int i) const {
     return p->data;
 }
 
-SingleList& SingleList::operator=(const SingleList& List) {
+template<class T>
+const T& SingleList<T>::operator[](int i) const {
+    ListNode* p  = head->next;
+    i = i + 1;
+    int j = 1;
+    while (p && j < i)
+    {
+        p = p->next;
+        j++;
+    }
+    if( !p || j > i) return head->data;
+    return p->data;
+}
+
+template<class T>
+SingleList<T>& SingleList<T>::operator=(const SingleList<T>& List) {
     ListNode* r = head;
     ListNode* p = List.head->next;
     ListNode* newNode = nullptr;
@@ -158,8 +175,9 @@ SingleList& SingleList::operator=(const SingleList& List) {
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& os, SingleList& list) {
-    SingleList::ListNode* p = list.head;
+template<class U>
+std::ostream& operator<<(std::ostream& os, SingleList<U>& list) {
+    typename SingleList<U>::ListNode* p = list.head;
     while(p->next) {
         p = p->next;
         os << p->data << " ";
@@ -167,7 +185,9 @@ std::ostream& operator<<(std::ostream& os, SingleList& list) {
     return os;
 }
 
-SingleList::~SingleList() {
+
+template<class T>
+SingleList<T>::~SingleList() {
     int val;
     clearList();
     if(head->next == nullptr) {
@@ -176,3 +196,4 @@ SingleList::~SingleList() {
         //std::cout << "release list"<< std::endl;
     }
 }
+*/
