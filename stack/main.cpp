@@ -25,6 +25,16 @@ int main() {
     }
     cout << lstack << endl;
 
+    //sequenList
+    SequenStack<int> sstack(10);
+    for(int i =0; i<10; i++) {
+        sstack.push(i+1);
+    }
+    cout <<"sstack size:"<<sstack.size()<< " elemet: "<<sstack << endl;
+    for(int i =0; i<11; i++) {
+        sstack.pop();
+        cout <<"sstack size:"<<sstack.size()<< " elemet: "<<sstack << endl;   
+    }
     cout << "test ended!" <<endl;
     return 0;
 }
