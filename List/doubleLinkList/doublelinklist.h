@@ -83,8 +83,13 @@ DoubleList<T>::DoubleList(const DoubleList<T>& dlist) {
     tail->pre = head;
     length = 0;
     ListNode* p = dlist.head->next;
+    ListNode* newNode = nullptr;
     while(p != tail) {
-        head->insertAfterNode(p->data); 
+        newNode = new ListNode(p->data);
+        newNode->pre = tail->pre;
+        newNode->next = tail;
+        tail->pre->next = newNode;
+        tail->pre = newNode;
         length++;
         p = p->next;
     }
@@ -275,8 +280,13 @@ template<class T>
 DoubleList<T>& DoubleList<T>::operator=(const DoubleList<T>& dlist) {
     length = dlist.length;
     ListNode* p = dlist.head->next;
-    while(p != tail) {
-        head->insertAfterNode(p->data);
+     ListNode* newNode = nullptr;
+     while(p != tail) {
+        newNode = new ListNode(p->data);
+        newNode->pre = tail->pre;
+        newNode->next = tail;
+        tail->pre->next = newNode;
+        tail->pre = newNode;
         length++;
         p = p->next;
     }

@@ -12,6 +12,8 @@ int main() {
     for(int i = 1; i<=10; i++) {
         dlist1.insertFromTail(i);
     }
+    cout << dlist1 << endl;
+    /*
     dlist1.insert(0,200);
     int val=0;
     dlist1.remove(0,val);
@@ -34,13 +36,18 @@ int main() {
     dlist1[1].data= 400;
     cout <<dlist1[1].data <<endl;
 
+    cout << (dlist1.isCycleList()?"cycle":"non cycle")<<endl;
+    dlist1.cycledList();
+    cout << (dlist1.isCycleList()?"cycle":"non cycle")<<endl;
+    
+    */
     //复制构造和赋值测试
     cout<< "\ncopy and asigment function test: "<<endl;;
-    DoubleList<int> dlist2(dlist1);
-    cout <<"copy constructor: "<< dlist2 << endl;
+    //DoubleList<int> dlist2(dlist1);
+    //cout <<"copy constructor: "<< dlist2 << endl;
 
     DoubleList<int> dlist3;
-    dlist3 = dlist2;
+    dlist3 = dlist1;
     cout <<"asignment =: "<< dlist3 << endl;
     
 
