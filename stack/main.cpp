@@ -19,6 +19,7 @@ int main() {
     lstack2 = lstack1;
     cout << "=: " << lstack2 << endl;
     
+    //pop all element
     while(lstack.size()) {
         lstack.pop();
     }
