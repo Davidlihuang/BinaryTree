@@ -5,7 +5,7 @@ using namespace std;
 
 template<class T>
 class DoubleList {
-public:
+private:
     struct ListNode;
     struct ListNode
     {
@@ -20,7 +20,7 @@ public:
 public:
     enum Status {Error = 0, OK = 1, Warning = 2};
     DoubleList();
-    DoubleList(const DoubleList<T>& dlist);
+    DoubleList(DoubleList<T>& dlist);
     ~DoubleList();
     Status insert(int i, T val);
     Status insertFromHead(T val);
@@ -76,7 +76,7 @@ DoubleList<T>::DoubleList(){
     length = 0;
 }
 template<class T>
-DoubleList<T>::DoubleList(const DoubleList<T>& dlist) {
+DoubleList<T>::DoubleList( DoubleList<T>& dlist) {
     head = new ListNode;
     tail = new ListNode;
     head->next = tail;
@@ -84,7 +84,7 @@ DoubleList<T>::DoubleList(const DoubleList<T>& dlist) {
     length = 0;
     ListNode* p = dlist.head->next;
     ListNode* newNode = nullptr;
-    while(p != tail) {
+    while(p != dlist.tail) {
         newNode = new ListNode(p->data);
         newNode->pre = tail->pre;
         newNode->next = tail;
@@ -93,6 +93,24 @@ DoubleList<T>::DoubleList(const DoubleList<T>& dlist) {
         length++;
         p = p->next;
     }
+}
+
+template<class T>
+DoubleList<T>& DoubleList<T>::operator=(const DoubleList<T>& dlist) {
+    length = dlist.length;
+    ListNode* p = dlist.head->next;
+    ListNode* newNode = nullptr;
+    while(p != dlist.tail) {
+        newNode = new ListNode(p->data);
+        newNode->pre = tail->pre;
+        newNode->next = tail;
+        tail->pre->next = newNode;
+        tail->pre = newNode;
+        length++;
+        p = p->next;
+    }
+
+    return *this;
 }
 template<class T>
 DoubleList<T>::~DoubleList() {
@@ -276,22 +294,7 @@ typename DoubleList<T>::Status DoubleList<T>::clearList() {
     st = removeFromHead(data);
     return st;
 }
-template<class T>
-DoubleList<T>& DoubleList<T>::operator=(const DoubleList<T>& dlist) {
-    length = dlist.length;
-    ListNode* p = dlist.head->next;
-     ListNode* newNode = nullptr;
-     while(p != tail) {
-        newNode = new ListNode(p->data);
-        newNode->pre = tail->pre;
-        newNode->next = tail;
-        tail->pre->next = newNode;
-        tail->pre = newNode;
-        length++;
-        p = p->next;
-    }
-    return *this;
-}
+
 template<class T>
 typename DoubleList<T>::ListNode& DoubleList<T>::operator[](int i) {
     ListNode* p = nullptr;
