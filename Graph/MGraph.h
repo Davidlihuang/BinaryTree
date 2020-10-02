@@ -1,19 +1,24 @@
 #ifndef MGRAPH_H_
 #define MGRAPH_H_
 #include <iostream>
+#include <queue>
 using VertexType = char;
 using EdgeType = int;
 const int MaxVetex = 100;
 const int INFINITY = 65535;
 
 //无向图
-VertexType v[] = {'A', 'B', 'C', 'D'};
-EdgeType E[][4] = {
-    {INFINITY,1,1,INFINITY},
-    {1, INFINITY, 1, 1},
-    {1,1,INFINITY,1},
-    {INFINITY, 1, 1, INFINITY}
+VertexType v[] = {'A', 'B', 'C', 'D', 'E','F','G'};
+EdgeType E[][7] = {
+    {0, 1, 1, 0, 0, 0, 0},
+    {1, 0, 1, 1, 0, 0, 0},
+    {1, 1, 0, 1, 0, 0, 0},
+    {0, 1, 1, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0, 1, 1},
+    {0, 0, 0, 0, 1, 0, 1},
+    {0, 0, 0, 0, 1, 1, 0},
 };
+bool visited[MaxVetex]{};
 
 struct MGraph{
     VertexType vexs[MaxVetex];
@@ -24,23 +29,15 @@ struct MGraph{
 };
 
 
-void CreateMGraph(MGraph* G) {
-    G->numVertexs = sizeof(v)/sizeof(VertexType);
-    for (int i = 0; i < G->numVertexs; i++) {
-        G->vexs[i] = v[i];
-        for(int j =0; j < G->numVertexs; j++) {
-            G->arc[i][j] = E[i][j];
-            if(E[i][j] == 1) G->numEdges++;
-        }
-    }
-    G->numEdges /= 2;
-}
+void CreateMGraph(MGraph* G);  
+void BFS(MGraph* G, int i);    //对于连通的部分广度优先
+void BFSTraverse(MGraph* G);   //广度优先遍历所有连通分量
+void DFS(MGraph* G, int i);    //深度优先遍历单一连通分量；
+void DFSTraverse(MGraph* G);   //深度优先遍历整个图的所有分量
+int InDegree(MGraph* G, int i); //获取任意结点的入度
+int OutDegree(MGraph* G, int i); //获取任意结点的出度
 
-void BFS(MGraph* G, VertexType vex); //对于连通的部分广度优先
-void DFS(MGraph* G, VertexType vex); //对于连通的部分深度优先
 
-void BFSTraverse(MGraph* G, VertexType vex); //广度遍历整个图的所有分量；
-void DFSTraverse(MGraph* G, VertexType vex); //深度遍历整个图的所有分量；
 
 
 #endif
