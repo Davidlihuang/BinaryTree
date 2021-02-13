@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/vec.h
+iostream
+-
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+functional
+-
+vec.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/vec.h
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/src/vec.cpp
+vec.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/src/vec.h
+iostream
+-
+
