@@ -150,6 +150,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/ComplexSorting.o: src/ComplexSorting.cpp.o
+
+.PHONY : src/ComplexSorting.o
+
+# target to build an object file
+src/ComplexSorting.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ComplexSorting.cpp.o
+.PHONY : src/ComplexSorting.cpp.o
+
+src/ComplexSorting.i: src/ComplexSorting.cpp.i
+
+.PHONY : src/ComplexSorting.i
+
+# target to preprocess a source file
+src/ComplexSorting.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ComplexSorting.cpp.i
+.PHONY : src/ComplexSorting.cpp.i
+
+src/ComplexSorting.s: src/ComplexSorting.cpp.s
+
+.PHONY : src/ComplexSorting.s
+
+# target to generate assembly for a file
+src/ComplexSorting.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ComplexSorting.cpp.s
+.PHONY : src/ComplexSorting.cpp.s
+
 src/vec.o: src/vec.cpp.o
 
 .PHONY : src/vec.o
@@ -189,6 +216,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/ComplexSorting.o"
+	@echo "... src/ComplexSorting.i"
+	@echo "... src/ComplexSorting.s"
 	@echo "... src/vec.o"
 	@echo "... src/vec.i"
 	@echo "... src/vec.s"

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/main.cpp.o"
   "CMakeFiles/main.dir/src/vec.cpp.o"
+  "CMakeFiles/main.dir/src/ComplexSorting.cpp.o"
   "main.pdb"
   "main"
 )

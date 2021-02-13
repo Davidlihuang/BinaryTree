@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/ComplexSorting.h
+iostream
+-
+string.h
+-
+
 ../include/vec.h
 iostream
 -
@@ -21,6 +27,18 @@ functional
 -
 vec.h
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/vec.h
+ComplexSorting.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/ComplexSorting.h
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/src/ComplexSorting.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+ComplexSorting.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/src/ComplexSorting.h
 
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_8/src/vec.cpp
 vec.h
