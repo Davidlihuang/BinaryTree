@@ -2,11 +2,11 @@
 #define STUDENT_H_
 #include "personal.h"
 
-class Student: Personal{
+class Student: public Personal{
 public:
     Student();
     Student(char*, char*, char*, int, long, char*);
-    ~Student();
+   // ~Student();
     void writeToFile(std::fstream&) const;
     void readFromFile(std::fstream&);
     int size() const;

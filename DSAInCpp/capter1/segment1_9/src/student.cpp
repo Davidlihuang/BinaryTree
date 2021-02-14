@@ -11,19 +11,20 @@ Student::Student(char* ssn, char* n, char* c, int y, long s, char* maj):majorLen
     major = new char[majorLen + 1];
     strcpy(major, maj);
 }
+/*
 Student::~Student() {
     if(major != nullptr) {
         delete[] major;
     }
 }
-
+*/
 void Student::writeToFile(fstream& fs) const {
     Personal::writeToFile(fs)  ;
     fs.write(major, majorLen);
 }
 
 void Student::readFromFile(fstream& fs) {
-    Personal::readFromFIle(fs);
+    Personal::readFromFile(fs);
     fs.read(major, majorLen);
 }
 

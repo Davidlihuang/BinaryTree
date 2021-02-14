@@ -35,8 +35,6 @@ database.h
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/database.h
 
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/src/database.cpp
-iostream
--
 fstream
 -
 database.h

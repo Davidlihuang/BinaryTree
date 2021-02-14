@@ -16,12 +16,14 @@ Personal::Personal(char *ssn, char *n, char *c, int y, long s) : nameLen(10), ci
     year = y;
     salary = s;
 }
+/*
 Personal::~Personal(){
     if(name != nullptr)
         delete [] name;
     if(city != nullptr) 
         delete [] city;
 }
+*/
 void Personal::writeToFile(fstream &out) const
 {
     out.write(SSN, 9);
@@ -31,7 +33,7 @@ void Personal::writeToFile(fstream &out) const
     out.write(reinterpret_cast<const char*>(&salary), sizeof(int));
 }
 
-void Personal::readFromFIle(fstream &in)
+void Personal::readFromFile(fstream &in)
 {
     in.read(SSN, 9);
     in.read(name, nameLen);
@@ -95,4 +97,8 @@ ostream &operator<<(ostream &os, Personal &p)
 istream &operator>>(istream &is, Personal &p)
 {
     return p.readFromConsoled(is);
+}
+
+bool Personal::operator==(const Personal& p){
+        return  strcmp(SSN , p.SSN) == 0;    
 }

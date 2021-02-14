@@ -1,10 +1,11 @@
-#include <iostream>
+/*#include <iostream>
 #include <fstream>
 #include "database.h"
 #include "personal.h"
 #include "student.h"
 
 using namespace std;
+
 template <class T>
 Database<T>::Database()
 {
@@ -88,7 +89,7 @@ void Database<T>::run()
     cin.getline(option, 4);
     while (cin.getline(option, 4))
     {
-        /* code */
+
         if (*option == '1')
         {
             cin >> record;
@@ -119,3 +120,4 @@ void Database<T>::run()
         cout << "Enter an option";
     }
 }
+*/

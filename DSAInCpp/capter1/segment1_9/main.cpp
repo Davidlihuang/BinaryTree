@@ -5,8 +5,7 @@
 
 using namespace std;
 int main() {
-  //  Database<Personal> helloDatabase;
-   //helloDatabase.run();
+    //Database<Personal> ().run();
     Database<Student>().run();
     return 0;
 }
