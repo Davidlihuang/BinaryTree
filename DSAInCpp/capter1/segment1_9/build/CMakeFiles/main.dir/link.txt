@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -g -g  -rdynamic CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/src/personal.cpp.o CMakeFiles/main.dir/src/student.cpp.o CMakeFiles/main.dir/src/database.cpp.o  -o main 

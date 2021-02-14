@@ -48,8 +48,10 @@ void testCase()
     {
         std::cout << *piter << std::endl;
     }
+    //默認升序排列，因爲Person類中提供了<運算符號
     sort(vecPerson.begin(), vecPerson.end());
-
+    
+   //可以自定義排序的項
     sort(vecPerson.begin(), vecPerson.end(), lesserAge);
     std::cout<< "comlexSorting test is finish .... "<< endl;
 }
