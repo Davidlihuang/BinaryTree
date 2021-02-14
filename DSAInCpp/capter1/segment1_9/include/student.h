@@ -7,16 +7,16 @@ public:
     Student();
     Student(char*, char*, char*, int, long, char*);
     ~Student();
-    void writeToFile(fstream&) const;
-    void readFromFile(fstream&);
+    void writeToFile(std::fstream&) const;
+    void readFromFile(std::fstream&);
     int size() const;
 
 protected:
     const int majorLen;
     char* major;
-    ostream& writeLogibly(ostream&);
-    friend ostream& operator<< (ostream&, Student&);
-    istream& readFromConsoled(istream&);
-    friend istream& operator>>(istream&, Student&);
+    std::ostream& writeLogibly(std::ostream&);
+    friend std::ostream& operator<< (std::ostream&, Student&);
+    std::istream& readFromConsoled(std::istream&);
+    friend std::istream& operator>>(std::istream&, Student&);
 };
 #endif

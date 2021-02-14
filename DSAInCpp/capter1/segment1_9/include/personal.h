@@ -4,15 +4,15 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std;
+
 class Personal
 {
 public:
     Personal();
     Personal(char *, char *, char *, int, long);
     ~Personal();
-    void writeToFile(fstream &) const;
-    void readFromFIle(fstream &);
+    void writeToFile(std::fstream &) const;
+    void readFromFIle(std::fstream &);
     void readKey();
     int size() const;
 
@@ -21,10 +21,10 @@ protected:
     char SSN[10], *name, *city;
     int year;
     long salary;
-    ostream &writeLegibly(ostream &);
-    friend ostream &operator<<(ostream &, Personal &);
-    istream &readFromConsoled(istream &);
-    friend istream &operator>>(istream &, Personal &);
+    std::ostream &writeLegibly(std::ostream &);
+    friend std::ostream &operator<<(std::ostream &, Personal &);
+   std::istream &readFromConsoled(std::istream &);
+    friend std::istream &operator>>(std::istream &, Personal &);
 };
 
 #endif

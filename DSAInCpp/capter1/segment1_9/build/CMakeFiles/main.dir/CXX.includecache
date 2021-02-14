@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/database.h
+iostream
+-
+fstream
+-
+
 ../include/personal.h
 fstream
 -
@@ -21,8 +27,24 @@ personal.h
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/main.cpp
 iostream
 -
+personal.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/personal.h
+student.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/student.h
+database.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/database.h
 
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/src/database.cpp
+iostream
+-
+fstream
+-
+database.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/src/database.h
+personal.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/src/personal.h
+student.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/src/student.h
 
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter1/segment1_9/src/personal.cpp
 personal.h

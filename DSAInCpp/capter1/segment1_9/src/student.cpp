@@ -1,5 +1,6 @@
 #include "student.h"
 #include <iostream>
+
 using namespace std;
 Student::Student(): majorLen(10){
     Personal();
