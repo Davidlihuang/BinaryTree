@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/intSLList.h
+iostream
+-
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter3/segment1_SingleList/main.cpp
+iostream
+-
+intSLList.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter3/segment1_SingleList/intSLList.h
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter3/segment1_SingleList/src/intSLList.cpp
+iostream
+-
+intSLList.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter3/segment1_SingleList/src/intSLList.h
+
