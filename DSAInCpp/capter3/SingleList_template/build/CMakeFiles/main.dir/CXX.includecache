@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/singlelist_tem.h
+iostream
+-
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter3/SingleList_template/main.cpp
+iostream
+-
+singlelist_tem.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter3/SingleList_template/singlelist_tem.h
+
