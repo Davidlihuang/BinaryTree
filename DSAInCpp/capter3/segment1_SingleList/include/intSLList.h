@@ -1,19 +1,21 @@
-#ifndef INTSLLIST_H_ 
+#ifndef INTSLLIST_H_
 #define INTSLLIST_H_
 #include <iostream>
 //节点
-class IntSLLNode{
+class IntSLLNode
+{
 public:
-    IntSLLNode():next(nullptr){}
-    IntSLLNode(int e, IntSLLNode* ptr = nullptr):info(e), next(ptr){}
+    IntSLLNode() : next(nullptr) {}
+    IntSLLNode(int e, IntSLLNode *ptr = nullptr) : info(e), next(ptr) {}
     int info;
-    IntSLLNode* next;
+    IntSLLNode *next;
 };
 
 //链表
-class IntSLList{
+class IntSLList
+{
 public:
-    IntSLList():head(nullptr), tail(nullptr){}
+    IntSLList() : head(nullptr), tail(nullptr) {}
     ~IntSLList();
 
     int isEmpty() { return head == nullptr; }
@@ -23,15 +25,12 @@ public:
     int deleteFromTail();
     void deleteNode(int);
     bool isInList(int) const;
-    void print(std::ostream&);
-    friend std::ostream& operator<<(std::ostream&,  IntSLList&);
+    void print(std::ostream &);
+    friend std::ostream &operator<<(std::ostream &, IntSLList &);
 
 private:
-    IntSLLNode* head;
-    IntSLLNode* tail;
-    
+    IntSLLNode *head;
+    IntSLLNode *tail;
 };
-
-
 
 #endif

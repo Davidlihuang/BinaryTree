@@ -58,7 +58,7 @@ int IntSLList::deleteFromHead()
 
 int IntSLList::deleteFromTail()
 {
-    int el; IntSLList::deleteNode(int e
+    int el;
     IntSLLNode *tmp = head;
     if (!isEmpty())
     {
@@ -139,7 +139,8 @@ bool IntSLList::isInList(int e) const
     }
 }
 
-void IntSLList::print(std::ostream& os) {
+void IntSLList::print(std::ostream &os)
+{
     if (!isEmpty())
     {
         IntSLLNode *tmp = head;
@@ -148,12 +149,14 @@ void IntSLList::print(std::ostream& os) {
             os << tmp->info << " ";
             tmp = tmp->next;
         }
-    } else {
+    }
+    else
+    {
         os << "EmptyList";
     }
 }
 
-std::ostream& operator<<(std::ostream &os,  IntSLList& lis)
+std::ostream &operator<<(std::ostream &os, IntSLList &lis)
 {
     lis.print(os);
     return os;
