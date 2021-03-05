@@ -19,7 +19,15 @@ public:
     SingleList()
     {
         head = tail = nullptr;
-    };
+    }
+    explicit SingleList(int nums, const T& data = T()): head(nullptr), tail(nullptr)
+    {
+         for(int i=0; i<nums; i++)
+         {
+             addToHead(data);
+         }
+    }
+    SingleList(SingleList& slist);
     ~SingleList();
 
     bool isEmpty() { return head == nullptr; };
@@ -36,6 +44,9 @@ public:
     size_t size();
     void printList(std::ostream &os);
 
+   T& operator[](int i);
+   SingleList<T>& operator=(SingleList<T>& slist);
+
     //1、类内实现友元
     /*
     friend std::ostream& operator<<(std::ostream& os, SingleList<T>& list) 
@@ -48,12 +59,27 @@ public:
     template <typename U>
     friend std::ostream &operator<<(std::ostream &os,  SingleList<U>& lis);
 
-
 private:
     ListNode<T> *head;
     ListNode<T> *tail;
 };
 
+template<typename T>
+SingleList<T>::SingleList(SingleList& slist):head(nullptr), tail(nullptr)
+{
+   ListNode<T>* temp = slist.head;
+    if((this !=  &slist) && (!slist.isEmpty()) )
+    {
+        tail = head = new ListNode<T>(temp->data);
+        temp = temp->next;
+        while(temp != nullptr)
+        {
+            tail->next = new ListNode<T>(temp->data, tail->next);
+            tail = tail->next;
+            temp = temp->next;
+        }
+    }
+}
 template <typename U>
 std::ostream &operator<<(std::ostream &os, SingleList<U>& list)
 {
@@ -115,7 +141,7 @@ void SingleList<T>::insertElement(const T &elem, size_t position)
         else
         {
             ListNode<T> *tmp = head;
-            for (int i = 0; i < position - 2; i++)
+            for (size_t i = 0; i < position - 2; i++)
             {
                 tmp = tmp->next;
             }
@@ -168,6 +194,7 @@ T SingleList<T>::deleteFromTail()
             }
             delete tail;
             tail = pre;
+            tail->next = nullptr;
         }
     }
     return elem;
@@ -192,7 +219,7 @@ T SingleList<T>::deletePositonElement( size_t positon)
         {
             ListNode<T> *pre = head;
             ListNode<T> *cur = head->next;
-            for (int i = 0; i < positon - 2; i++)
+            for (size_t i = 0; i < positon - 2; i++)
             {
                 pre = pre->next;
             }
@@ -247,7 +274,10 @@ bool SingleList<T>::find(const T elem)
         while (tmp != nullptr)
         {
             if (tmp->data == elem)
+            {
                 isfind = true;
+                break;
+            }
             tmp = tmp->next;
         }
     }
@@ -284,5 +314,52 @@ void SingleList<T>::printList(std::ostream &os)
     }
 }
 
+template<typename T>
+T& SingleList<T>::operator[](int i)
+{
+    ListNode<T>* temp = head;
+    size_t  sizeList = size();
+    if(i < 0 || i >sizeList ) 
+        throw "range false!";
+    else if(!isEmpty()) 
+    {
+        for (int j =0; j<i; j++)
+        {
+            temp = head->next;
+        }
+        return temp->data;
+    }
 
+}
+
+template<typename T>
+SingleList<T>& SingleList<T>::operator=( SingleList& slist)
+{
+    if((this != &slist) && !isEmpty() && !slist.isEmpty())
+    {
+        size_t thisSize = size();
+        size_t slistSize = slist.size();
+        ListNode<T>* temp1 = head;
+        ListNode<T>* temp2 = slist.head;
+    
+        if( thisSize > slistSize) {
+            for(int i =0; i< slistSize; i++)
+            {
+                temp1->data = temp2->data;
+                temp1 = temp1->next;
+                temp2 = temp2->next;
+            }
+        }
+        else 
+        {
+            for(int i=0; i<slistSize; i++)
+            {
+                temp1->data = temp2->data;
+                temp1 = temp1->next;
+                temp2 = temp2->next;
+            }
+        }
+    }
+    return *this;
+}
 #endif
