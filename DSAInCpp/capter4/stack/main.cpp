@@ -7,9 +7,14 @@
 using namespace std;
 int main()
 {
+    /*
     cout << "array stack"<<endl;
     sequenStackTest();
     cout << "\nvec stack"<< endl;
     vecSequenStackTest();
+    */
+   singleStackTest();
+   
+
     return 0;
 }

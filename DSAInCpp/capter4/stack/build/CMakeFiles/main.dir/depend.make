@@ -12,5 +12,6 @@ CMakeFiles/main.dir/src/DLLStack.cpp.o: ../src/DLLStack.cpp
 CMakeFiles/main.dir/src/sequenceStack.cpp.o: ../include/sequenceStack.h
 CMakeFiles/main.dir/src/sequenceStack.cpp.o: ../src/sequenceStack.cpp
 
+CMakeFiles/main.dir/src/singleListStack.cpp.o: ../include/singleListStack.h
 CMakeFiles/main.dir/src/singleListStack.cpp.o: ../src/singleListStack.cpp
 
