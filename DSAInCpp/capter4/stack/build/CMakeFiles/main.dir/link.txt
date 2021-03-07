@@ -1,0 +1,1 @@
+/usr/bin/c++    -W -Wall -Wfatal-errors -g -g  -rdynamic CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/src/DLLStack.cpp.o CMakeFiles/main.dir/src/sequenceStack.cpp.o CMakeFiles/main.dir/src/singleListStack.cpp.o  -o main 

@@ -2,6 +2,10 @@
 #define BUBBLESORT_H_
 
 #include <iostream>
+/*******************************************************************
+ *   
+ * 
+ * ******************************************************************/
 template <typename T>
 void bubbleSort(T &data, size_t length, bool option)
 {
@@ -28,7 +32,9 @@ void bubbleSort(T &data, size_t length, bool option)
         }
     }
 }
-
+/**********************************************************
+*
+**********************************************************/
 template <typename U>
 void bubbleSortOpt(U &data, size_t length, bool option)
 {
