@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include "sequenceStack.h"
-#include "DLLStack.h"
 #include "singleListStack.h"
+#include "DoubleLinkStack.h"
 
 using namespace std;
 int main()
@@ -13,8 +13,7 @@ int main()
     cout << "\nvec stack"<< endl;
     vecSequenStackTest();
     */
-   singleStackTest();
-   
-
+   //singleStackTest();
+   dllstackTest();
     return 0;
 }

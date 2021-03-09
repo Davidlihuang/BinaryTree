@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/DLLStack.h
+../include/DoubleLinkStack.h
 iostream
 -
 
@@ -27,16 +27,16 @@ vector
 -
 sequenceStack.h
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/stack/sequenceStack.h
-DLLStack.h
-/home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/stack/DLLStack.h
 singleListStack.h
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/stack/singleListStack.h
+DoubleLinkStack.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/stack/DoubleLinkStack.h
 
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/stack/src/DLLStack.cpp
-DLLStack.h
-/home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/stack/src/DLLStack.h
 iostream
 -
+DoubleLinkStack.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/stack/src/DoubleLinkStack.h
 
 /home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/stack/src/sequenceStack.cpp
 iostream
