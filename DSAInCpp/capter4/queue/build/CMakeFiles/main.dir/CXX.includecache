@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/cicleQueue.h
+iostream
+-
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/queue/main.cpp
+iostream
+-
+cicleQueue.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/capter4/queue/cicleQueue.h
+
