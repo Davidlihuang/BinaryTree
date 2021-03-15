@@ -1,0 +1,1 @@
+/usr/bin/c++   -W -Wall -Wfatal-errors -g  -rdynamic CMakeFiles/insertSort.dir/insertSort.cpp.o  -o insertSort 

@@ -1,0 +1,3 @@
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/insertSort/build/CMakeFiles/rebuild_cache.dir
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/insertSort/build/CMakeFiles/insertSort.dir
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/insertSort/build/CMakeFiles/edit_cache.dir
