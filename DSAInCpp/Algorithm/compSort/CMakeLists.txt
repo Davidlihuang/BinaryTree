@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.0)
+project(BubbleSort)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -Wfatal-errors -g")
+set(CAMKE_BUILD_TYPE Debug)
+add_executable(compsort compsort.cpp)
