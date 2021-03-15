@@ -21,7 +21,6 @@ void compSort(T data[], int n)
     int step = n;
     while ((step = int(step / 1.3)) > 1)
     {
-        /*
         for(int j = n-1, k = 0; j >= step; j-- )
         {
             
@@ -33,20 +32,11 @@ void compSort(T data[], int n)
                 swap(data[j], data[k]);
             }
 
-        }*/
-        for (int j = 0, k = 0; j < n - step; j++)
-        {
-            k = j + step;
-            if (data[j] > data[k])
-            {
-                cout << "change: ( " << j << ", " << k << " )"
-                     << "data( " << data[j] << ", " << data[k] << " )" << endl;
-                swap(data[j], data[k]);
-            }
         }
         cout << "setp: " << step << " " << endl;
         printArray(data, n);
     }
+    
     //冒泡排序
     bool loopFlag = true;
     for (int i = 0; i < n && loopFlag; i++)
@@ -69,6 +59,7 @@ int main()
     int length = sizeof(data) / sizeof(int);
     printArray(data, length);
     compSort(data, length);
+    cout << "result: ";
     printArray(data, length);
     return 0;
 }

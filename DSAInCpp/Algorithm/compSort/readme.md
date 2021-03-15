@@ -10,19 +10,22 @@ void compSort(T data[], int n)
     int step = n;
     while ((step = int(step / 1.3)) > 1)
     {
-        for (int j = 0, k = 0; j < n - step; j++)
+        for(int j = n-1, k = 0; j >= step; j-- )
         {
-            k = j + step;
-            if (data[j] > data[k])
+            
+            k = j - step;
+            if( data[j] < data[k])
             {
-                cout << "change: ( " << j << ", " << k << " )"
-                     << "data( " << data[j] << ", " << data[k] << " )" << endl;
+                cout << "change: ( " << j <<", " << k << " )"<<\
+                                 "data( " << data[j] <<  ", " << data[k]<< " )"<<endl; 
                 swap(data[j], data[k]);
             }
+
         }
         cout << "setp: " << step << " " << endl;
         printArray(data, n);
     }
+    
     //冒泡排序
     bool loopFlag = true;
     for (int i = 0; i < n && loopFlag; i++)
@@ -40,3 +43,7 @@ void compSort(T data[], int n)
 }
 ```
 - 时间复杂度分析
+
+最坏情况取决于冒泡排序： $O(n^2)$
+
+最好情况：$O(nlogn)$
