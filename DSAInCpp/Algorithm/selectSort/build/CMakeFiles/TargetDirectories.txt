@@ -1,3 +1,3 @@
-/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/build/CMakeFiles/rebuild_cache.dir
-/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/build/CMakeFiles/compsort.dir
-/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/build/CMakeFiles/edit_cache.dir
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/build/CMakeFiles/rebuild_cache.dir
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/build/CMakeFiles/selectSort.dir
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/build/CMakeFiles/edit_cache.dir

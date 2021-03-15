@@ -1,0 +1,1 @@
+/usr/bin/c++   -W -Wall -Wfatal-errors -g  -rdynamic CMakeFiles/selectSort.dir/selectSort.cpp.o  -o selectSort 

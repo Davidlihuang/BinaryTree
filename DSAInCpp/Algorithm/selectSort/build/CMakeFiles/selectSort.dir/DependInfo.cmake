@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/compsort.cpp" "/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/build/CMakeFiles/compsort.dir/compsort.cpp.o"
+  "/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/selectSort.cpp" "/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/build/CMakeFiles/selectSort.dir/selectSort.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

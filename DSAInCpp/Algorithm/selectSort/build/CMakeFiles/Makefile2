@@ -54,45 +54,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort
+CMAKE_SOURCE_DIR = /home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/build
+CMAKE_BINARY_DIR = /home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/compsort.dir
+# Target rules for target CMakeFiles/selectSort.dir
 
 # All Build rule for target.
-CMakeFiles/compsort.dir/all:
-	$(MAKE) -f CMakeFiles/compsort.dir/build.make CMakeFiles/compsort.dir/depend
-	$(MAKE) -f CMakeFiles/compsort.dir/build.make CMakeFiles/compsort.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/build/CMakeFiles --progress-num=1,2 "Built target compsort"
-.PHONY : CMakeFiles/compsort.dir/all
+CMakeFiles/selectSort.dir/all:
+	$(MAKE) -f CMakeFiles/selectSort.dir/build.make CMakeFiles/selectSort.dir/depend
+	$(MAKE) -f CMakeFiles/selectSort.dir/build.make CMakeFiles/selectSort.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/build/CMakeFiles --progress-num=1,2 "Built target selectSort"
+.PHONY : CMakeFiles/selectSort.dir/all
 
 # Include target in all.
-all: CMakeFiles/compsort.dir/all
+all: CMakeFiles/selectSort.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/compsort.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/compsort.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/build/CMakeFiles 0
-.PHONY : CMakeFiles/compsort.dir/rule
+CMakeFiles/selectSort.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/selectSort.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/build/CMakeFiles 0
+.PHONY : CMakeFiles/selectSort.dir/rule
 
 # Convenience name for target.
-compsort: CMakeFiles/compsort.dir/rule
+selectSort: CMakeFiles/selectSort.dir/rule
 
-.PHONY : compsort
-
-# clean rule for target.
-CMakeFiles/compsort.dir/clean:
-	$(MAKE) -f CMakeFiles/compsort.dir/build.make CMakeFiles/compsort.dir/clean
-.PHONY : CMakeFiles/compsort.dir/clean
+.PHONY : selectSort
 
 # clean rule for target.
-clean: CMakeFiles/compsort.dir/clean
+CMakeFiles/selectSort.dir/clean:
+	$(MAKE) -f CMakeFiles/selectSort.dir/build.make CMakeFiles/selectSort.dir/clean
+.PHONY : CMakeFiles/selectSort.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/selectSort.dir/clean
 
 .PHONY : clean
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/compSort/compsort.cpp
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/selectSort/selectSort.cpp
 iostream
 -
 string
