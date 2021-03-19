@@ -26,7 +26,7 @@ void testFileSparse()
 
     stringSparse spa;
     spa.sparseData(filename);
-    spa.printData();
+    cout << spa << endl;
 }
 
 #endif

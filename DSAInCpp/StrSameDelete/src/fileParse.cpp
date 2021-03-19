@@ -79,7 +79,6 @@ void stringSparse::matchMyData(vector<string> &res)
     stack<string> st;
     dataNode data;
     int opt = 0;
-    cout << "size: " << res.size() << endl;
     if (res.size() < 2)
         return;
     for (int i = 0; i < res.size(); i++)
@@ -144,10 +143,10 @@ void stringSparse::sparseData(const string &srcFilename)
         }
 
         // 匹配
-        if(result.empty() == 0 && result[0] == "Menu")
+        if (result.empty() == 0 && result[0] == "Menu")
         {
-         title = result[0];
-        subtitle =  result[1];
+            title = result[0];
+            subtitle = result[1];
         }
         if (result.size() > 2)
         {

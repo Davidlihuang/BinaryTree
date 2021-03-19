@@ -33,18 +33,22 @@ private:
 
 public:
     void sparseData(const string &srcFilename);
-    void printData() {
-        cout << title<<":" << subtitle<<endl;
+    friend ostream& operator << (ostream& os,  stringSparse& sparse)
+    {
+        sparse.printData(os);
+        return os;
+    }
+    void printData(ostream& os) {
+        os << title<<":" << subtitle<<endl;
         int i=0;
         for(auto c: Data)
         {
             i++;
-            cout << "CmdItem"<< i <<":" \
+            os << "CmdItem"<< i <<":" \
             <<" label="<<c.label<<","\
             <<" Type="<<c.type<<","\
             <<" Dummy="<<c.dummy<<","\
-            <<" tclCmd="<<c.tclCmd<<","\
-            << endl;
+            <<" tclCmd="<<c.tclCmd<<"\n" ;
         }
     }
 };
