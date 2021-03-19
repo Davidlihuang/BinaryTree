@@ -1,0 +1,1 @@
+/usr/bin/c++   -W -Wall -Wfatal-errors -g  -rdynamic CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/src/fileParse.cpp.o CMakeFiles/main.dir/src/createData.cpp.o CMakeFiles/main.dir/src/strCmp.cpp.o CMakeFiles/main.dir/src/stringDelete.cpp.o  -o main 
