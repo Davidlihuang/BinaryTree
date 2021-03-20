@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/queens.h
+iostream
+-
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/EighQueen/main.cpp
+iostream
+-
+queens.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/Algorithm/EighQueen/queens.h
+
