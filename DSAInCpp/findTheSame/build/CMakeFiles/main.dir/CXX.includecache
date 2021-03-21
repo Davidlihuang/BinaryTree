@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/bubbleSort.h
+iostream
+-
+
+/home/huangli/MyLearning/DataStructure/DSAInCpp/findTheSame/main.cpp
+iostream
+-
+string
+-
+vector
+-
+bubbleSort.h
+/home/huangli/MyLearning/DataStructure/DSAInCpp/findTheSame/bubbleSort.h
+set
+-
+
