@@ -2,7 +2,8 @@
 ## 算法思路：
 
 ## 解题方案
-### 递归法- 自顶向下
+## 一、递归法- 自顶向下
+### 1. 源码
 ```cpp
 void mergeSort(vector<int> &data, int first, int last)
 {
@@ -16,9 +17,9 @@ void mergeSort(vector<int> &data, int first, int last)
     Merge(data, first, mid, last); //治
 }
 ```
-### 迭代法-自底向上
-## 优化方法
-### 1. 对于小规模的数组使用插入排序
+
+### 2. 优化方法
+### ①、 对于小规模的数组使用插入排序
 - 思路
     用不同规模的方法处理小规模的问题，能改进大多数递归算法的性能，因为递归会使得小规模问题中方法调用太过于频繁，所以改进它的处理方法就能改进整个算法
 - 方法
@@ -40,7 +41,7 @@ void mergeSort1(vector<int> &data, int low, int high)
     Merge(data, low, mid, high);
 }
   ```
-### 2. 测试待排序序列中左右半边是否有序（左边所有的数小于右边所有的数）
+### ②、测试待排序序列中左右半边是否有序（左边所有的数小于右边所有的数）
 
 - 避免合并方法的调用
   
@@ -62,3 +63,7 @@ void mergeSort2(vector<int> &data, int low, int high)
     Merge(data, low, mid, high);
 }
 ```
+### ③、优化merge
+
+## 二、迭代方式
+### 1. 思路
